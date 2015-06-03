@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>HTML5学堂</title>
+	<title></title>
 	<link rel="stylesheet" href="css/reset.css">
 	<script src="js/jquery-1.11.2.js" charset="utf-8" type="text/javascript"></script>
 	<style>
@@ -169,10 +169,25 @@
 		});*/
 		$(".list li").on("click", function() {
 			var index = $(this).index();
-			$(this).addClass('set').stop(true, true).animate({width : "160px"}, 500).siblings().removeClass('set').stop(true, true).animate({width: "120px"},1);
+			$(this).animate({
+				width : "160px"
+			}, 500).siblings().animate({
+				width: "120px"
+			},1);
+
 			$(".hostMap img").eq(index).addClass("imageSwitcher").siblings().removeClass('imageSwitcher');
-			$(".list-a li").eq(index).addClass("show").stop(true, true).animate({left: "0"},800).siblings().removeClass('show').stop(true, true).animate({left: "-200px"},1);
-			$(".content p").eq(index).addClass("showA").stop(true, true).animate({bottom: "0"}, 600).siblings().removeClass('showA').stop(true, true).animate({bottom: "-100px"}, 1);
+
+			$(".list-a li").eq(index).stop(true, true).animate({
+				left: "0"
+			},800).siblings().stop(true, true).animate({
+				left: "-200px"
+			},1);
+
+			$(".content p").eq(index).stop(true, true).animate({
+				bottom: "0"
+			}, 600).siblings().stop(true, true).animate({
+				bottom: "-100px"
+			}, 1);
 		})
 	</script>
 </body>
